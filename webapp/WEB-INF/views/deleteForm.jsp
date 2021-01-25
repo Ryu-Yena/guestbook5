@@ -9,7 +9,7 @@
 </head>
 <body>
 	
-	<form action="${pageContext.request.contextPath}/guest/delete?no=${no}" method="post">
+	<form action="${pageContext.request.contextPath}/guest/delete" method="post">
 		비밀번호 <input type="password" name="password">
 		<button type="submit">확인</button>
 		<br>
