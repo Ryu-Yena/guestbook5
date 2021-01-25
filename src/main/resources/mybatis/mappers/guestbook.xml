@@ -27,7 +27,7 @@
 	</insert>
 	
 	<!-- 방명록 삭제 -->
-	<delete id="">
+	<delete id="delete" parameterType="int">
 		<![CDATA[
 		delete from gusetbook
 		where no = #{no}
