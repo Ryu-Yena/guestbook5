@@ -9,13 +9,13 @@
 </head>
 <body>
 	
-	<form action="${pageContext.request.contextPath}/guest/delete/${no}" method="post">
+	<form action="${pageContext.request.contextPath}/guest/delete?no=${no}" method="post">
 		비밀번호 <input type="password" name="password">
 		<button type="submit">확인</button>
 		<br>
 		<a href="${pageContext.request.contextPath}/guest/addlist">메인으로 돌아가기</a>
 		
-		<input type="text" name="no" value="${requestScope.no}">
+		<input type="text" name="no" value="${no}">
 	</form>
 
 </body>

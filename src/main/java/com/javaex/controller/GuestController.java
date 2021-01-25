@@ -6,10 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.javaex.dao.GuestDao;
 import com.javaex.vo.GuestVo;
@@ -40,44 +39,39 @@ public class GuestController {
 		
 	}
 	
-	/*
 	//등록
-	@RequestMapping(value="/add", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/add", method = { RequestMethod.GET, RequestMethod.POST })
 	public String add(@ModelAttribute GuestVo guestVo) {
-			
+
 		System.out.println("등록");
-				
+
 		guestDao.addGuest(guestVo);
-		
+
 		return "redirect:/guest/addlist";
-		
+
 	}
 	
+	
 	//삭제 폼
-	@RequestMapping(value ="/deleteForm{no}", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/deleteForm{no}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String deleteForm() {
-		
+
 		System.out.println("삭제 폼");
 
-		
 		return "deleteForm";
 	}
 	
-	
 	//삭제
-	@RequestMapping(value="/delete/{no}", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/delete", method = { RequestMethod.GET, RequestMethod.POST })
 	public String delete(@ModelAttribute GuestVo guestVo, Model model) {
-		
+
 		System.out.println("삭제");
 
-		guestDao.guestDelete(guestVo);
-		
-		model.addAttribute("gVo", guestVo);
-		
-			return "redirect:/guest/addlist";
-			
-		
-	}
-	*/
+		guestDao.deleteGuest(guestVo);
 
+		model.addAttribute("gVo", guestVo);
+
+		return "redirect:/guest/addlist";
+
+	}
 }
